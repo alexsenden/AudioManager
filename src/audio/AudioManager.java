@@ -37,7 +37,17 @@ public class AudioManager {
 	 */
 	public static void playSongImmediately(String... titles) {
 		songManager.stopSongs();
-		songManager.addToQueue(titles);
+		songManager.toAddImmediately(titles);
 	}
 	
+	/**
+	 * Immediately plays sounds effects.
+	 * 
+	 * @param 	sounds 	the titles of the sound effects to play
+	 */
+	public static void playEffects(String... sounds) {
+		for(String s : sounds) {
+			new SoundEffect(s);
+		}
+	}
 }
